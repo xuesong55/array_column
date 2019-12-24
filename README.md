@@ -51,7 +51,7 @@ $records = array(
     )
 );
 
-$lastNames = array_column($records, 'last_name', 'id');
+$lastNames = array_column( $records, 'last_name', 'id' );
 ```
 
 If we call `print_r()` on `$lastNames`, you'll see a resulting array that looks

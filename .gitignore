@@ -4,3 +4,9 @@ composer.lock
 build
 vendor
 *.phar
+LICENSE
+phpunit.xml.dist
+README.md
+src/array_column.php
+tests/ArrayColumnTest.php
+tests/bootstrap.php
