@@ -23,63 +23,73 @@ return an array of just the last names, indexed by their record IDs.
 ``` php
 <?php
 $records = array(
-    array(
-        'id' => 2135,
-        'first_name' => 'John',
-        'last_name' => 'Doe'
-    ),
-    array(
-        'id' => 3245,
-        'first_name' => 'Sally',
-        'last_name' => 'Smith'
-    ),
-    array(
-        'id' => 5342,
-        'first_name' => 'Jane',
-        'last_name' => 'Jones'
-    ),
-    array(
-        'id' => 5623,
-        'first_name' => 'Peter',
-        'last_name' => 'Doe'
-    )
+	array( 
+		'id' => 1000, 'name' => '百度',  
+		'web' => array( 'http://www.baidu.com/','http://baike.baidu.com/' ) 
+	),
+	array( 'id' => 1001, 'name' => '腾讯', 
+		'web' => array( 'http://www.qq.com/' ,'http://v.qq.com/')
+	),
+	array( 
+		'id' => 1002, 'name' => '阿里',  
+		'web' => array( 'http://www.taobao.com/'  , 'http://www.tmall.com/')
+	)
 );
 
-$lastNames = array_column( $records, 'last_name', 'id' );
 ```
-
-If we call `print_r()` on `$lastNames`, you'll see a resulting array that looks
-a bit like this:
-
+测试
 ``` text
+// 输出指定键
+print_r(  array_column( $records,  'name'  , 'id' ) )  ;
 Array
 (
-    [2135] => Doe
-    [3245] => Smith
-    [5342] => Jones
-    [5623] => Doe
+    [1000] => 百度
+    [1001] => 腾讯
+    [1002] => 阿里
 )
+
+//输出所有
+print_r(  array_column( $records,  null  , 'id' ) )  ;
+Array
+(
+    [1000] => Array
+        (
+            [id] => 1000
+            [name] => 百度
+            [web] => Array
+                (
+                    [0] => http://www.baidu.com/
+                    [1] => http://baike.baidu.com/
+                )
+
+        )
+
+    [1001] => Array
+        (
+            [id] => 1001
+            [name] => 腾讯
+            [web] => Array
+                (
+                    [0] => http://www.qq.com/
+                    [1] => http://v.qq.com/
+                )
+
+        )
+
+    [1002] => Array
+        (
+            [id] => 1002
+            [name] => 阿里
+            [web] => Array
+                (
+                    [0] => http://www.taobao.com/
+                    [1] => http://www.tmall.com/
+                )
+
+        )
+
+)
+
+
+
 ```
-
-
-## 安装
-
-The easiest way to install this library is to use [Composer](https://getcomposer.org/):
-
-```
-php composer.phar require ramsey/array_column
-```
-
-Then, when you run `composer install`, everything will fall magically into place,
-and the `array_column()` function will be available to your project, as long as
-you are including Composer's autoloader.
-
-_However, you do not need Composer to use this library._
-
-This library has no dependencies and should work on older versions of PHP.
-Download the code and include `src/array_column.php` in your project, and all
-should work fine.
-
-When you are ready to run your project on PHP 5.5, everything should
-continue to run well without conflicts, even if this library remains included
-in your project.
