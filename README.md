@@ -1,18 +1,12 @@
 # array_column() for PHP
 
-[![Build Status](https://travis-ci.org/ramsey/array_column.svg?branch=master)](https://travis-ci.org/ramsey/array_column)
-[![Coverage Status](https://coveralls.io/repos/ramsey/array_column/badge.svg?branch=master)](https://coveralls.io/r/ramsey/array_column)
-[![Latest Stable Version](https://poser.pugx.org/ramsey/array_column/v/stable.svg)](https://packagist.org/packages/ramsey/array_column)
-[![Total Downloads](https://poser.pugx.org/ramsey/array_column/downloads.svg)](https://packagist.org/packages/ramsey/array_column)
-[![Latest Unstable Version](https://poser.pugx.org/ramsey/array_column/v/unstable.svg)](https://packagist.org/packages/ramsey/array_column)
-[![License](https://poser.pugx.org/ramsey/array_column/license.svg)](https://packagist.org/packages/ramsey/array_column)
-
 This simple library provides functionality for [`array_column()`](http://php.net/array_column)
 to versions of PHP earlier than 5.5. It mimics the functionality of the built-in
 function in every way.
 
+PHP数组值循环处理成下标，并且可以指定一维取值
 
-## Usage
+## 例子
 
 ```
 array array_column(array $input, mixed $columnKey[, mixed $indexKey])
@@ -68,7 +62,7 @@ Array
 ```
 
 
-## Installation
+## 安装
 
 The easiest way to install this library is to use [Composer](https://getcomposer.org/):
 
